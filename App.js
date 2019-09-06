@@ -3,12 +3,13 @@ import { StyleSheet, Text, View } from 'react-native';
 import { createAppContainer } from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
 import SearchScreen from "./src/Screens/SearchScreen";
-import CardView from './src/Components/CardView'; 
+import ResultShowScreen from "./src/Screens/ResultShowScreen";
 
 
 const navigator = createStackNavigator(
     {
-        Search: SearchScreen
+        Search: SearchScreen,
+        Detail: ResultShowScreen
     },
     {
         initialRouteName: 'Search',

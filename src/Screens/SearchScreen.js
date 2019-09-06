@@ -16,37 +16,41 @@ const SearchScreen = () => {
     };
     
     return(
-        /*{<ScrollView>}*/
-        <View style={styles.container}>
+        <>
+        {/*<View style={styles.container}>*/}
             <SearchBar
                 term={term}
                 onTermChange={setTerm}
                 onTermSubmit = {() => searchApi(term)}
             />
-            {errorMessage ? <Text>{errorMessage}</Text> : null}
-            <Text style = {styles.textStyle}>We have found: {results.length} results</Text>
+            {errorMessage ? <Text style={styles.textStyle}>{errorMessage}</Text> : null}
+            {/*<Text style = {styles.textStyle}>We have found: {results.length} results</Text>*/}
             <ScrollView>
             <ResultsList
+                // navigation={navigation}
                 results = {filterResultsByPrice('$')}
                 title="Cost Effective"
             />
             <ResultsList
+                // navigation={navigation}
                 results = {filterResultsByPrice('$$')}
                 title="Bit Pricer"
             />
             <ResultsList
+                // navigation={navigation}
                 results = {filterResultsByPrice('$$$')}
                 title="Big Spender"
             />
             </ScrollView>
-        </View>
-        /*{</ScrollView>}*/
+        {/*</View>*/}
+        </>
     );
 }
 
 const styles = StyleSheet.create({
     container:{
-      marginBottom: 90
+      //marginBottom: 90
+        //flex: 1
     },
     textStyle: {
         marginLeft: 15,
