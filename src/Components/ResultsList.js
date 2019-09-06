@@ -5,7 +5,7 @@ import CardView from "./CardView";
 
 const ResultsList = ({title, results}) => {
     return (
-        <View>
+        <View style={styles.container}>
             <Text style= {styles.title}>{title}</Text>
             <FlatList
                 //can also use just the name of the prop when it´s true.
@@ -22,6 +22,10 @@ const ResultsList = ({title, results}) => {
     );
 };
 const styles = StyleSheet.create({
+    container:{
+      marginBottom: 10,
+        marginRight: 15
+    },
     title: {
         fontSize: 18,
         fontWeight: 'bold',

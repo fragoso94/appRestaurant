@@ -17,7 +17,7 @@ const SearchScreen = () => {
     
     return(
         /*{<ScrollView>}*/
-        <View>
+        <View style={styles.container}>
             <SearchBar
                 term={term}
                 onTermChange={setTerm}
@@ -25,6 +25,7 @@ const SearchScreen = () => {
             />
             {errorMessage ? <Text>{errorMessage}</Text> : null}
             <Text style = {styles.textStyle}>We have found: {results.length} results</Text>
+            <ScrollView>
             <ResultsList
                 results = {filterResultsByPrice('$')}
                 title="Cost Effective"
@@ -37,12 +38,16 @@ const SearchScreen = () => {
                 results = {filterResultsByPrice('$$$')}
                 title="Big Spender"
             />
+            </ScrollView>
         </View>
         /*{</ScrollView>}*/
     );
 }
 
 const styles = StyleSheet.create({
+    container:{
+      marginBottom: 90
+    },
     textStyle: {
         marginLeft: 15,
         fontStyle: "italic"
