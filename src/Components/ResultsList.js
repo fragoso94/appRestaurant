@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, Text, StyleSheet, FlatList} from 'react-native';
 import ResultsDetail from '../Components/ResultsDetail';
+import CardView from "./CardView";
 
 const ResultsList = ({title, results}) => {
     return (
@@ -13,7 +14,8 @@ const ResultsList = ({title, results}) => {
                 data = {results}
                 keyExtractor = {(result) => result.id}
                 renderItem = {({item}) => {
-                    return <ResultsDetail result = {item} />;
+                    //return <ResultsDetail result = {item} />;
+                    return <CardView result = {item} />;
                 }}
             />
         </View>
