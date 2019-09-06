@@ -1,25 +1,33 @@
 import React from 'react';
-import {View, Text, StyleSheet, Image} from 'react-native';
-import { Card, ListItem, Icon, Button } from 'react-native-elements';
+import {View, Text, StyleSheet, ScrollView} from 'react-native';
+import { Card, ListItem, Icon, Button, Rating } from 'react-native-elements';
+import Raiting from './Raiting'
 
 const CardView = ({result}) =>
 {
     return(
         <View>
             <Card
-                //title={result.name}
+                title={result.name}
                 image={{uri: result.image_url}}
             >
-                <Text style={{marginBottom: 10}}>
-                    {result.name}
+                <Text style={{marginBottom: 5}}>
+                    {result.alias}
                 </Text>
                 <Text>
                     {result.rating} Stars, {result.review_count} Reviews
                 </Text>
-                {/*<Button*/}
-                {/*    icon={<Icon name='code' color='#ffffff' />}*/}
-                {/*    buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0}}*/}
-                {/*    title='VIEW NOW' />*/}
+                <Rating
+                    type="star"
+                    imageSize={25}
+                    showRating ={false}
+                    //ratingCount={5}
+                    fractions={1}
+                    startingValue={result.rating}
+                    ratingTextColor = 'red'
+                    //count={result.rating}
+                    //defaultRating={0}
+                />
             </Card>
         </View>
     );
