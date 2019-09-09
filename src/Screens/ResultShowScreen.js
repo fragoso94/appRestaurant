@@ -24,10 +24,10 @@ const ResultShowScreen = ({navigation})=>
         <View>
             <Text>{result.name}</Text>
             <FlatList
-                data={result.photo}
-                keyExtractor={(photo)=> photo}
-                renderItem={(item)=>{
-
+                data={result.photos}
+                keyExtractor={ photo => photo}
+                renderItem={ ({item})=>{
+                    return <Image style={styles.image} source={{uri: item}} />
                 }}
 
             />
@@ -36,7 +36,10 @@ const ResultShowScreen = ({navigation})=>
 }
 
 const styles = StyleSheet.create({
-
+    image:{
+        width: 200,
+        height: 300
+    }
 });
 
 export default ResultShowScreen;
